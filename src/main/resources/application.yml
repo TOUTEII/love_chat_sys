@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+  #servlet default /
+  servlet:
+    context-path: /love_chat_sys
+
+spring:
+  datasource:
+    name: love_chat_sys
+    type: com.alibaba.druid.pool.DruidDataSource
+    #conncent database url
+    url: jdbc:mysql:///love_chat_sys?serverTimezone=UTC
+    username: root
+    password: laotao13CV
+    #driver-class
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #collection
+    filters: stat
+    initial-size: 2
+    max-idle: 10
+    min-idle: 1
+    max-active: 20
+    #connect timeout
+    max-wait: 60000
+    #check time for shutdown connection
+    time-between-eviction-runs-millis: 600000
+    #connect live space
+    min-evictable-time-millis: 300000
+    #check db connection
+    validation-query: SELECT 'x'
+    test-while-idle: true
+    test-on-borrow: false
+
+#springmvc view span
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp
